@@ -14,7 +14,9 @@ public class combinationSelection{
     public static void main(String[] args) {
         int n,r;
         Scanner sc = new Scanner(System.in);
+        System.out.print("Enter value of n: ");
         n = sc.nextInt();
+        System.out.print("Enter value of r: ");
         r = sc.nextInt();
         int ans;
         ans = nCr(n,r);

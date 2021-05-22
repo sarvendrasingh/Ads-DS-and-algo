@@ -18,7 +18,9 @@ public class power {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int m,n;
+        System.out.print("Enter value of base(m): ");
         m = sc.nextInt();
+        System.out.print("Enter value of power(n): ");
         n = sc.nextInt();
         int ans;
         ans = power(m,n);

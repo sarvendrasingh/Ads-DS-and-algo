@@ -157,7 +157,7 @@ public class singlyLinkedList
     public static void main(String[] args) {
 //		System.out.println("Hello World");
 
-        //     Main sll = new Main(); // object called sll
+        //     singlyLinkedList sll = new singlyLinkedList(); // object called sll
         //     sll.head = new ListNode(10);
         // ListNode second = new ListNode(1);
         // ListNode third = new ListNode(1);
