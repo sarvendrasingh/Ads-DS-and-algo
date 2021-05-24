@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class DoublyLinkedList {
@@ -47,13 +48,64 @@ public class DoublyLinkedList {
     }
 
     public void display(){
+        if(head == null){
+            return;
+        }
         ListNode current = head;
         // ListNode current = previous;
+        System.out.print("null");
+        System.out.print("<--");
         while(current != null){
             System.out.print(current.data + "<-->");
             current = current.next;
         }
         System.out.print("null");
+    }
+
+    public void displayBackward(){
+        if(head == null){
+            return;
+        }
+        ListNode current = tail;
+        System.out.print("null");
+        System.out.print("<--");
+        while(current != null){
+            System.out.print(current.data + "<-->");
+            current = current.previous;
+        }
+        System.out.print("null");
+    }
+    public ListNode deleteFirst(){
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+        ListNode temp = head;
+        if(head == tail){
+            tail = null;
+        }
+        else{
+            head.next.previous = null;
+        }
+        head = head.next;
+        temp.next = null;
+        length--;
+        return temp;
+    }
+    public ListNode deleteLast(){
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+        ListNode temp = tail;
+        if(head == tail){
+            head = null;
+        }
+        else{
+            tail.previous.next = null;  //tail.previous.next
+        }
+        tail = tail.previous;
+        temp.previous = null;
+        length--;
+        return temp;
     }
 
     public static void main(String[] args) {
@@ -78,7 +130,21 @@ public class DoublyLinkedList {
         }
 
         System.out.println();
+
         System.out.println("Entered list is: ");
+        dll.display();
+        System.out.println();
+        System.out.println("Entered list from backward is: ");
+        dll.displayBackward();
+
+        dll.deleteFirst();
+        System.out.println();
+        System.out.println("Entered list after deleting first element is: ");
+        dll.display();
+
+        dll.deleteLast();
+        System.out.println();
+        System.out.println("Entered list after deleting last element is: ");
         dll.display();
 //        dll.displayForward();
     }
