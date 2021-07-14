@@ -61,14 +61,31 @@ public class singlyLinkedList
         }
     }
 
-    public ListNode insertFirst(int a){
-        ListNode newNode = new ListNode(a);
-        ListNode current = head;
-        newNode.next = current;
-        head.next = newNode;
+//     public ListNode insertFirst(int a){
+//         ListNode newNode = new ListNode(a);
+//         ListNode current = head;
+//         newNode.next = current;
+//         head.next = newNode;
 
-        return head;
-    }
+//         return head;
+//     }
+    public void insertFirst(int data) {  
+        //Create a new node  
+        ListNode newNode = new ListNode(data);  
+  
+ 
+        if(head == null) {  
+            head = newNode;  
+        }  
+        else {  
+            //Node temp will point to head  
+            ListNode temp = head;  
+            //newNode will become new head of the list  
+            head = newNode;  
+            //Node temp(previous head) will be added after new head  
+            head.next = temp;  
+        }  
+    }  
 
     public boolean search(ListNode head,int a){
         if(head == null){
